@@ -6,12 +6,14 @@ app.listen(3030, ()=> {
     console.log('Servidor corriendo en localhost:3030')
 });
 
+app.use(express.static('public'));
+
 app.get('/', (req,res)=> {
     res.sendFile(path.join(__dirname, '/views/index.html'))
 });
 
 app.get('/babbage', (req,res)=> {
-    res.sendFile(path.join(__dirname, '/views/babbge.html'))
+    res.sendFile(path.join(__dirname, '/views/babbage.html'))
 });
 
 app.get('/berners-lee', (req,res)=> {
